@@ -1,0 +1,1333 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Luxurious+Roman&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Parla Boutique Samsun Brand Palette */
+  --parla-black: #0d0c0b;
+  --parla-charcoal: #1a1816;
+  --parla-gold: #c5a059;
+  --parla-gold-light: #dfc286;
+  --parla-gold-dark: #9a7836;
+  --parla-cream: #faf8f5;
+  --parla-sand: #f2ece1;
+  --parla-white: #ffffff;
+  --parla-text: #181614;
+  --parla-muted: #6e6860;
+  --parla-border: #e8e2d8;
+  --trendyol-orange: #f27a1a;
+
+  /* Typography (Robin.com.tr matched) */
+  --font-primary: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-secondary: 'Luxurious Roman', 'Cormorant Garamond', Georgia, serif;
+
+  /* Radius & Transitions (Robin.com.tr matched) */
+  --radius-custom: 6px;
+  --transition-fast: 0.25s ease;
+  --transition-smooth: 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-primary);
+  color: var(--parla-text);
+  background-color: var(--parla-white);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background-color: var(--parla-white);
+  color: var(--parla-text);
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 0 36px;
+  }
+}
+
+/* ==========================================
+   1. TOP BAR (Robin.com.tr Announcement Style)
+   ========================================== */
+.top-bar {
+  background-color: var(--parla-black);
+  color: var(--parla-white);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(197, 160, 89, 0.28);
+  padding: 9px 16px;
+}
+
+.top-bar-inner {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.top-bar-message {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.top-bar-gold {
+  color: var(--parla-gold-light);
+  font-weight: 600;
+}
+
+.top-bar-divider {
+  opacity: 0.4;
+}
+
+.top-bar-links {
+  display: none;
+  align-items: center;
+  gap: 18px;
+  font-size: 11px;
+}
+
+@media (min-width: 1024px) {
+  .top-bar-links {
+    display: flex;
+  }
+  .top-bar-message {
+    margin: 0;
+  }
+}
+
+.top-bar-link {
+  color: rgba(255, 255, 255, 0.82);
+  text-transform: none;
+  letter-spacing: 0.03em;
+}
+
+.top-bar-link:hover {
+  color: var(--parla-gold-light);
+}
+
+/* ==========================================
+   2. HEADER & NAVIGATION (Robin.com.tr Style)
+   ========================================== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background-color: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--parla-border);
+  transition: all var(--transition-fast);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 76px;
+  gap: 24px;
+}
+
+@media (min-width: 1024px) {
+  .header-inner {
+    height: 84px;
+  }
+}
+
+.brand-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.brand-logo-img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--parla-gold);
+}
+
+.brand-logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-logo-title {
+  font-family: var(--font-secondary);
+  font-size: 20px;
+  letter-spacing: 0.12em;
+  color: var(--parla-black);
+  line-height: 1.1;
+}
+
+.brand-logo-sub {
+  font-size: 9px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--parla-gold-dark);
+  margin-top: 2px;
+}
+
+/* Plain text navigation — NO button boxes! */
+.main-nav {
+  display: none;
+  align-items: center;
+  gap: 28px;
+}
+
+@media (min-width: 1024px) {
+  .main-nav {
+    display: flex;
+  }
+}
+
+.nav-link {
+  font-size: 12.5px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--parla-text);
+  padding: 6px 0;
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-primary);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 1.5px;
+  background-color: var(--parla-gold-dark);
+  transition: width var(--transition-fast);
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--parla-gold-dark);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.search-box {
+  position: relative;
+  display: none;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .search-box {
+    display: flex;
+  }
+}
+
+.search-input {
+  width: 200px;
+  height: 36px;
+  padding: 0 32px 0 12px;
+  border: 1px solid var(--parla-border);
+  border-radius: var(--radius-custom);
+  background-color: var(--parla-cream);
+  font-family: var(--font-primary);
+  font-size: 12px;
+  color: var(--parla-text);
+  transition: border-color var(--transition-fast), width var(--transition-fast);
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--parla-gold);
+  width: 240px;
+  background-color: var(--parla-white);
+}
+
+.search-icon {
+  position: absolute;
+  right: 10px;
+  color: var(--parla-muted);
+  pointer-events: none;
+}
+
+.header-text-link {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--parla-text);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.header-text-link:hover {
+  color: var(--parla-gold-dark);
+}
+
+.mobile-menu-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: var(--parla-text);
+  cursor: pointer;
+  padding: 4px;
+}
+
+@media (min-width: 1024px) {
+  .mobile-menu-btn {
+    display: none;
+  }
+}
+
+/* Mobile Navigation Drawer */
+.mobile-nav-drawer {
+  display: none;
+  background: var(--parla-white);
+  border-bottom: 1px solid var(--parla-border);
+  padding: 16px 20px 24px;
+}
+
+.mobile-nav-drawer.open {
+  display: block;
+}
+
+.mobile-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ==========================================
+   3. ROBIN.COM.TR SHEEN HOVER EFFECT
+   ========================================== */
+.sheen-wrap {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-custom);
+}
+
+.sheen-wrap::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -120%;
+  width: 55%;
+  pointer-events: none;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.35) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-14deg);
+  transition: left 0.75s ease-in-out;
+}
+
+.sheen-wrap:hover::after {
+  left: 150%;
+}
+
+/* ==========================================
+   4. HERO SHOWCASE (Robin.com.tr Hero Block)
+   ========================================== */
+.hero-section {
+  margin-bottom: 40px;
+}
+
+@media (min-width: 1024px) {
+  .hero-section {
+    margin-bottom: 64px;
+  }
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 16px;
+  background-color: var(--parla-black);
+  color: var(--parla-white);
+  overflow: hidden;
+}
+
+.hero-content-col {
+  grid-column: span 12;
+  padding: 44px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  background: radial-gradient(circle at 20% 50%, rgba(197, 160, 89, 0.14), transparent 70%);
+}
+
+@media (min-width: 1024px) {
+  .hero-content-col {
+    grid-column: span 5;
+    padding: 64px 56px;
+  }
+}
+
+.hero-eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--parla-gold-light);
+  margin-bottom: 14px;
+}
+
+.hero-title {
+  font-family: var(--font-secondary);
+  font-size: clamp(28px, 3.6vw, 48px);
+  font-weight: 400;
+  line-height: 1.18;
+  color: var(--parla-white);
+  margin-bottom: 18px;
+}
+
+.hero-desc {
+  font-size: 14px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.7;
+  margin-bottom: 28px;
+  max-width: 460px;
+}
+
+/* Plain underlined text link like Robin.com.tr — not a button box */
+.editorial-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--parla-gold-light);
+  text-decoration: underline;
+  text-underline-offset: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px 0;
+  font-family: var(--font-primary);
+  transition: color var(--transition-fast);
+}
+
+.editorial-link:hover {
+  color: var(--parla-white);
+}
+
+.editorial-link-dark {
+  color: var(--parla-text);
+}
+
+.editorial-link-dark:hover {
+  color: var(--parla-gold-dark);
+}
+
+.hero-visual-col {
+  grid-column: span 12;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  padding: 0 12px 12px;
+}
+
+@media (min-width: 1024px) {
+  .hero-visual-col {
+    grid-column: span 7;
+    padding: 16px 16px 16px 0;
+    gap: 12px;
+  }
+}
+
+.hero-img-card {
+  aspect-ratio: 3 / 4.2;
+  overflow: hidden;
+  border-radius: var(--radius-custom);
+  position: relative;
+}
+
+.hero-img-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-smooth);
+}
+
+.hero-img-card:hover img {
+  transform: scale(1.04);
+}
+
+/* ==========================================
+   5. SECTION TITLES (Robin.com.tr block-title)
+   ========================================== */
+.section-block {
+  margin-bottom: 48px;
+}
+
+@media (min-width: 1024px) {
+  .section-block {
+    margin-bottom: 72px;
+  }
+}
+
+.block-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.block-title {
+  font-family: var(--font-secondary);
+  font-size: clamp(22px, 2.4vw, 32px);
+  font-weight: 400;
+  color: var(--parla-black);
+  letter-spacing: 0.02em;
+}
+
+/* ==========================================
+   6. POPÜLER KATEGORİLER (featured-category.twig)
+   ========================================== */
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+@media (min-width: 640px) {
+  .categories-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .categories-grid {
+    gap: 24px;
+  }
+}
+
+.category-card {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.category-img-wrap {
+  aspect-ratio: 720 / 1020;
+  background-color: var(--parla-cream);
+  border-radius: var(--radius-custom);
+  overflow: hidden;
+}
+
+.category-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-smooth);
+}
+
+.category-card:hover .category-img-wrap img {
+  transform: scale(1.04);
+}
+
+/* Robin.com.tr exact category caption: plain centered text, NO button box */
+.category-label {
+  padding: 14px 8px 4px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--parla-text);
+  transition: color var(--transition-fast);
+}
+
+.category-card:hover .category-label {
+  color: var(--parla-gold-dark);
+}
+
+/* ==========================================
+   7. PRODUCT SHOWCASE & CARDS (Clean Typography)
+   ========================================== */
+.filter-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--parla-border);
+}
+
+.filter-tabs {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+/* Plain text filter tabs — NO boxes */
+.filter-tab {
+  background: none;
+  border: none;
+  padding: 4px 0;
+  font-family: var(--font-primary);
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--parla-muted);
+  cursor: pointer;
+  position: relative;
+  transition: color var(--transition-fast);
+}
+
+.filter-tab:hover {
+  color: var(--parla-black);
+}
+
+.filter-tab.active {
+  color: var(--parla-black);
+  font-weight: 600;
+}
+
+.filter-tab.active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -15px;
+  height: 2px;
+  background-color: var(--parla-gold);
+}
+
+.filter-Inline-group {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-size: 12px;
+  color: var(--parla-muted);
+}
+
+.size-filter-link {
+  background: none;
+  border: none;
+  font-family: var(--font-primary);
+  font-size: 12px;
+  color: var(--parla-muted);
+  cursor: pointer;
+  padding: 2px 4px;
+}
+
+.size-filter-link:hover,
+.size-filter-link.active {
+  color: var(--parla-gold-dark);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px 16px;
+}
+
+@media (min-width: 768px) {
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .products-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 36px 24px;
+  }
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-media {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  background-color: var(--parla-cream);
+  border-radius: var(--radius-custom);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.product-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-smooth), opacity 0.35s ease;
+}
+
+.product-media:hover img {
+  transform: scale(1.03);
+}
+
+.product-subtle-tag {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--parla-black);
+  background-color: rgba(255, 255, 255, 0.88);
+  padding: 3px 8px;
+  border-radius: 2px;
+}
+
+/* Product info below image: clean typography, no borders or boxes */
+.product-info {
+  padding-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.product-meta-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  min-height: 18px;
+}
+
+/* Interactive Color Dots */
+.color-dots {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.color-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.color-dot:hover {
+  transform: scale(1.15);
+}
+
+.color-dot.active {
+  box-shadow: 0 0 0 2px var(--parla-white), 0 0 0 3.5px var(--parla-gold-dark);
+}
+
+/* Plain text sizes on card — NOT boxed buttons! */
+.product-sizes-text {
+  font-size: 11px;
+  color: var(--parla-muted);
+  letter-spacing: 0.04em;
+}
+
+.product-sizes-text span.out {
+  text-decoration: line-through;
+  opacity: 0.45;
+}
+
+.product-title {
+  font-size: 13.5px;
+  font-weight: 400;
+  color: var(--parla-text);
+  line-height: 1.4;
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+
+.product-title:hover {
+  color: var(--parla-gold-dark);
+}
+
+.product-bottom-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 2px;
+}
+
+.product-price-wrap {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.product-price {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--parla-black);
+}
+
+.product-old-price {
+  font-size: 12px;
+  color: var(--parla-muted);
+  text-decoration: line-through;
+}
+
+/* Subtle underlined link for Trendyol on card — NOT a box! */
+.product-trendyol-link {
+  font-size: 11.5px;
+  font-weight: 500;
+  color: var(--parla-gold-dark);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  white-space: nowrap;
+}
+
+.product-trendyol-link:hover {
+  color: var(--trendyol-orange);
+}
+
+/* ==========================================
+   8. 2'Lİ GÖRSEL BLOK (Robin.com.tr relation-2164)
+   ========================================== */
+.dual-banner-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 16px;
+}
+
+@media (min-width: 1024px) {
+  .dual-banner-grid {
+    gap: 24px;
+  }
+}
+
+.dual-banner-item {
+  grid-column: span 12;
+  position: relative;
+  aspect-ratio: 4 / 3.8;
+  max-height: 560px;
+  border-radius: var(--radius-custom);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+@media (min-width: 1024px) {
+  .dual-banner-item {
+    grid-column: span 6;
+    aspect-ratio: 4 / 3.8;
+  }
+}
+
+.dual-banner-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 15%;
+  transition: transform var(--transition-smooth);
+}
+
+.dual-banner-item:hover img {
+  transform: scale(1.03);
+}
+
+.dual-banner-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 32px 24px;
+  background: linear-gradient(to top, rgba(13, 12, 11, 0.9) 0%, rgba(13, 12, 11, 0.42) 55%, transparent 100%);
+  color: var(--parla-white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.dual-banner-title {
+  font-family: var(--font-secondary);
+  font-size: clamp(22px, 2.5vw, 36px);
+  margin-bottom: 6px;
+}
+
+.dual-banner-link {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--parla-gold-light);
+  text-decoration: underline;
+  text-underline-offset: 8px;
+  padding: 6px 0;
+}
+
+/* ==========================================
+   9. INFO ICON STRIP (Robin.com.tr info-icon.twig)
+   ========================================== */
+.info-strip {
+  padding: 40px 0;
+  border-top: 1px solid var(--parla-border);
+  border-bottom: 1px solid var(--parla-border);
+  background-color: var(--parla-cream);
+  margin-bottom: 48px;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px 16px;
+}
+
+@media (min-width: 1024px) {
+  .info-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+}
+
+.info-icon {
+  width: 38px;
+  height: 38px;
+  color: var(--parla-gold-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.info-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--parla-black);
+}
+
+.info-sub {
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--parla-muted);
+}
+
+/* ==========================================
+   10. PRODUCT DETAIL MODAL (Clean Color & Size)
+   ========================================== */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background-color: rgba(13, 12, 11, 0.65);
+  backdrop-filter: blur(4px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.modal-backdrop.open {
+  display: flex;
+}
+
+.product-modal {
+  background-color: var(--parla-white);
+  width: 100%;
+  max-width: 1020px;
+  max-height: 92vh;
+  border-radius: var(--radius-custom);
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.28);
+}
+
+.modal-close {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  z-index: 10;
+  background: none;
+  border: none;
+  font-size: 26px;
+  line-height: 1;
+  color: var(--parla-text);
+  cursor: pointer;
+}
+
+.modal-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.modal-gallery {
+  grid-column: span 12;
+  padding: 20px;
+  background-color: var(--parla-cream);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+@media (min-width: 768px) {
+  .modal-gallery {
+    grid-column: span 6;
+    padding: 28px;
+  }
+}
+
+.modal-main-img {
+  aspect-ratio: 3 / 4;
+  width: 100%;
+  border-radius: var(--radius-custom);
+  overflow: hidden;
+  background-color: var(--parla-white);
+}
+
+.modal-main-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modal-thumbs {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+}
+
+.modal-thumb {
+  width: 64px;
+  height: 84px;
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+  opacity: 0.6;
+  border: 1.5px solid transparent;
+  flex-shrink: 0;
+  transition: all var(--transition-fast);
+}
+
+.modal-thumb.active,
+.modal-thumb:hover {
+  opacity: 1;
+  border-color: var(--parla-gold-dark);
+}
+
+.modal-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modal-details {
+  grid-column: span 12;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+@media (min-width: 768px) {
+  .modal-details {
+    grid-column: span 6;
+    padding: 36px 36px;
+  }
+}
+
+.modal-code {
+  font-size: 11px;
+  color: var(--parla-muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.modal-title {
+  font-family: var(--font-secondary);
+  font-size: 26px;
+  font-weight: 400;
+  color: var(--parla-black);
+  line-height: 1.25;
+}
+
+.modal-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.modal-price {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--parla-black);
+}
+
+.modal-old-price {
+  font-size: 15px;
+  color: var(--parla-muted);
+  text-decoration: line-through;
+}
+
+.variant-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.variant-label {
+  font-size: 12px;
+  color: var(--parla-muted);
+}
+
+.variant-label strong {
+  color: var(--parla-black);
+  font-weight: 600;
+}
+
+.modal-color-list {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.modal-color-option {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-primary);
+  font-size: 13px;
+  color: var(--parla-muted);
+  padding: 4px 0;
+  border-bottom: 1.5px solid transparent;
+}
+
+.modal-color-option.active {
+  color: var(--parla-black);
+  font-weight: 600;
+  border-bottom-color: var(--parla-gold-dark);
+}
+
+.modal-size-list {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+/* Clean typographic size selector without heavy boxes */
+.modal-size-item {
+  background: none;
+  border: none;
+  border-bottom: 1.5px solid transparent;
+  padding: 4px 2px;
+  font-family: var(--font-primary);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--parla-text);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.modal-size-item:hover:not(:disabled) {
+  color: var(--parla-gold-dark);
+}
+
+.modal-size-item.active {
+  color: var(--parla-black);
+  font-weight: 700;
+  border-bottom-color: var(--parla-gold-dark);
+}
+
+.modal-size-item:disabled {
+  color: var(--parla-muted);
+  text-decoration: line-through;
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.modal-desc {
+  font-size: 13.5px;
+  color: var(--parla-muted);
+  line-height: 1.7;
+}
+
+.modal-fabric {
+  font-size: 12px;
+  color: var(--parla-text);
+  padding-top: 8px;
+  border-top: 1px solid var(--parla-border);
+}
+
+/* Single Primary Conversion CTA to Trendyol */
+.trendyol-primary-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 15px 24px;
+  background-color: var(--parla-black);
+  color: var(--parla-gold-light);
+  border: 1px solid var(--parla-gold);
+  border-radius: var(--radius-custom);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: all var(--transition-fast);
+  margin-top: 6px;
+}
+
+.trendyol-primary-cta:hover {
+  background-color: var(--parla-gold);
+  color: var(--parla-black);
+}
+
+.modal-secondary-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 12px;
+  color: var(--parla-muted);
+  padding-top: 4px;
+}
+
+.modal-secondary-links a {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.modal-secondary-links a:hover {
+  color: var(--parla-gold-dark);
+}
+
+/* ==========================================
+   11. FOOTER (Robin.com.tr footer/default.twig)
+   ========================================== */
+.site-footer {
+  background-color: var(--parla-black);
+  color: var(--parla-white);
+  padding: 56px 0 32px;
+  border-top: 2px solid var(--parla-gold);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 32px 24px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-brand-col {
+  grid-column: span 12;
+}
+
+@media (min-width: 1024px) {
+  .footer-brand-col {
+    grid-column: span 4;
+  }
+}
+
+.footer-col {
+  grid-column: span 6;
+}
+
+@media (min-width: 1024px) {
+  .footer-col {
+    grid-column: span 2;
+  }
+  .footer-contact-col {
+    grid-column: span 4;
+  }
+}
+
+.footer-heading {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--parla-gold-light);
+  margin-bottom: 16px;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.footer-links a:hover {
+  color: var(--parla-gold-light);
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  padding-top: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.55);
+}

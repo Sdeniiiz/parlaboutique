@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yönetim Paneli | Parla Butique Samsun</title>
+  <link rel="icon" type="image/jpeg" href="/images/brand/parla-logo.jpg" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <style>
+    body {
+      background-color: #f6f4f0;
+    }
+    .admin-header {
+      background-color: var(--parla-black);
+      color: var(--parla-white);
+      border-bottom: 2px solid var(--parla-gold);
+      padding: 16px 0;
+      position: sticky;
+      top: 0;
+      z-index: 40;
+    }
+    .admin-header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .admin-nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+    .admin-tab-btn {
+      background: none;
+      border: none;
+      color: rgba(255, 255, 255, 0.72);
+      font-family: var(--font-primary);
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      padding: 6px 0;
+      border-bottom: 2px solid transparent;
+      transition: all 0.2s ease;
+    }
+    .admin-tab-btn:hover,
+    .admin-tab-btn.active {
+      color: var(--parla-gold-light);
+      border-bottom-color: var(--parla-gold);
+    }
+    .stats-bar {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin: 28px 0;
+    }
+    @media (min-width: 768px) {
+      .stats-bar {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+    .stat-card {
+      background: var(--parla-white);
+      border: 1px solid var(--parla-border);
+      border-radius: var(--radius-custom);
+      padding: 18px 20px;
+    }
+    .stat-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--parla-muted);
+      margin-bottom: 6px;
+    }
+    .stat-value {
+      font-family: var(--font-secondary);
+      font-size: 28px;
+      color: var(--parla-black);
+    }
+    .admin-panel-card {
+      background: var(--parla-white);
+      border: 1px solid var(--parla-border);
+      border-radius: var(--radius-custom);
+      padding: 24px;
+      margin-bottom: 32px;
+    }
+    .admin-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+    .btn-gold {
+      background-color: var(--parla-black);
+      color: var(--parla-gold-light);
+      border: 1px solid var(--parla-gold);
+      border-radius: var(--radius-custom);
+      padding: 10px 18px;
+      font-family: var(--font-primary);
+      font-size: 12.5px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+    }
+    .btn-gold:hover {
+      background-color: var(--parla-gold);
+      color: var(--parla-black);
+    }
+    .btn-text {
+      background: none;
+      border: none;
+      font-family: var(--font-primary);
+      font-size: 12.5px;
+      font-weight: 500;
+      color: var(--parla-text);
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      cursor: pointer;
+      padding: 4px 6px;
+    }
+    .btn-text:hover {
+      color: var(--parla-gold-dark);
+    }
+    .btn-text.danger {
+      color: #b91c1c;
+    }
+    .btn-text.danger:hover {
+      color: #7f1d1d;
+    }
+    .admin-table-wrap {
+      overflow-x: auto;
+    }
+    table.admin-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+    table.admin-table th {
+      text-align: left;
+      padding: 12px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--parla-muted);
+      border-bottom: 1px solid var(--parla-border);
+    }
+    table.admin-table td {
+      padding: 14px 12px;
+      border-bottom: 1px solid var(--parla-border);
+      vertical-align: middle;
+    }
+    .table-thumb {
+      width: 52px;
+      height: 68px;
+      object-fit: cover;
+      border-radius: 4px;
+      background: var(--parla-cream);
+    }
+    .inline-trendyol-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      max-width: 340px;
+    }
+    .form-input,
+    .form-select,
+    .form-textarea {
+      width: 100%;
+      padding: 9px 12px;
+      border: 1px solid var(--parla-border);
+      border-radius: var(--radius-custom);
+      font-family: var(--font-primary);
+      font-size: 13px;
+      color: var(--parla-text);
+      background-color: var(--parla-white);
+    }
+    .form-input:focus,
+    .form-select:focus,
+    .form-textarea:focus {
+      outline: none;
+      border-color: var(--parla-gold-dark);
+    }
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 16px;
+    }
+    .col-12 { grid-column: span 12; }
+    .col-6 { grid-column: span 12; }
+    .col-4 { grid-column: span 12; }
+    @media (min-width: 768px) {
+      .col-6 { grid-column: span 6; }
+      .col-4 { grid-column: span 4; }
+    }
+    .field-label {
+      display: block;
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--parla-text);
+      margin-bottom: 6px;
+    }
+    .variant-editor-box {
+      border: 1px solid var(--parla-border);
+      border-radius: var(--radius-custom);
+      padding: 18px;
+      background-color: var(--parla-cream);
+      margin-bottom: 16px;
+    }
+    .variant-editor-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--parla-border);
+    }
+    .variant-images-list {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+    .variant-img-item {
+      width: 96px;
+      background: var(--parla-white);
+      border: 1px solid var(--parla-border);
+      border-radius: 4px;
+      padding: 4px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .variant-img-item img {
+      width: 100%;
+      height: 112px;
+      object-fit: cover;
+      border-radius: 2px;
+    }
+    .variant-img-actions {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 10px;
+    }
+    .sizes-matrix {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 8px;
+    }
+    .size-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--parla-white);
+      border: 1px solid var(--parla-border);
+      border-radius: 4px;
+      padding: 6px 10px;
+      font-size: 12px;
+    }
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: var(--parla-black);
+      color: var(--parla-gold-light);
+      border: 1px solid var(--parla-gold);
+      padding: 12px 20px;
+      border-radius: var(--radius-custom);
+      font-size: 13px;
+      z-index: 200;
+      display: none;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+    }
+    .toast.show {
+      display: block;
+    }
+    .eval-grid {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 16px;
+    }
+    @media (min-width: 768px) {
+      .eval-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    .eval-card {
+      border: 1px solid var(--parla-border);
+      border-radius: var(--radius-custom);
+      padding: 18px;
+      background: var(--parla-cream);
+    }
+    .feature-toggle-card {
+      background: #fbf9f5;
+      border: 1px solid var(--parla-border);
+      border-radius: var(--radius-custom);
+      padding: 14px 18px;
+      margin-bottom: 20px;
+    }
+    .toggle-chips-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 10px;
+    }
+    .feature-toggle-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 14px;
+      background: var(--parla-white);
+      border: 1.5px solid var(--parla-border);
+      border-radius: var(--radius-custom);
+      font-size: 12.5px;
+      font-weight: 500;
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.2s ease;
+    }
+    .feature-toggle-btn.active {
+      border-color: var(--parla-gold-dark);
+      background-color: var(--parla-black);
+      color: var(--parla-gold-light);
+    }
+    .feature-toggle-btn input[type="checkbox"] {
+      display: none;
+    }
+    .cat-badge {
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 3px;
+      font-size: 11px;
+      font-weight: 500;
+      background: var(--parla-cream);
+      border: 1px solid var(--parla-border);
+      margin-right: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ADMIN HEADER -->
+  <header class="admin-header">
+    <div class="container admin-header-inner">
+      <div class="brand-logo">
+        <img src="/images/brand/parla-logo.jpg" alt="Parla Butique" class="brand-logo-img" />
+        <div class="brand-logo-text">
+          <span class="brand-logo-title" style="color: var(--parla-white);">PARLA BUTIQUE</span>
+          <span class="brand-logo-sub" style="color: var(--parla-gold-light);">Yönetim Paneli · Ürün, Renk/Beden &amp; Trendyol Yönetimi</span>
+        </div>
+      </div>
+
+      <div class="admin-nav">
+        <button type="button" class="admin-tab-btn active" data-admin-tab="products">Ürünler &amp; Varyantlar</button>
+        <button type="button" class="admin-tab-btn" data-admin-tab="categories">Kategori Yönetimi</button>
+        <button type="button" class="admin-tab-btn" data-admin-tab="evaluation">Instagram Fotoğraf Değerlendirmesi</button>
+        <a href="/" class="editorial-link" style="font-size: 12px;">Mağazayı Görüntüle ↗</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- DASHBOARD STATS -->
+    <div class="stats-bar">
+      <div class="stat-card">
+        <div class="stat-label">Toplam Ürün</div>
+        <div class="stat-value" id="statTotalProducts">0</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Toplam Renk Varyantı</div>
+        <div class="stat-value" id="statTotalVariants">0</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Aktif Ürün Görseli</div>
+        <div class="stat-value" id="statTotalImages">0</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Trendyol Bağlantılı Ürün</div>
+        <div class="stat-value" id="statTrendyolLinked">0</div>
+      </div>
+    </div>
+
+    <!-- TAB 1: PRODUCTS LIST & EDITOR -->
+    <section id="tabProducts">
+      <div class="admin-panel-card">
+        <div class="admin-toolbar">
+          <div>
+            <h2 class="block-title" style="font-size: 24px;">Ürün, Görsel &amp; Trendyol Yönetimi</h2>
+            <p style="font-size: 12.5px; color: var(--parla-muted);">
+              Her ürün için isteğe bağlı renk varyantı, beden stokları, kumaş bilgisi ve Trendyol sipariş bağlantısı tanımlayabilirsiniz.
+            </p>
+          </div>
+          <button type="button" class="btn-gold" id="newProductBtn">+ Yeni Ürün Ekle</button>
+        </div>
+
+        <div class="admin-table-wrap">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Görsel</th>
+                <th>Ürün Bilgisi</th>
+                <th>Özellikler &amp; Varyantlar</th>
+                <th>Fiyat</th>
+                <th>Trendyol Sipariş Bağlantısı (Hızlı Düzenle)</th>
+                <th>İşlemler</th>
+              </tr>
+            </thead>
+            <tbody id="adminProductsTable">
+              <!-- Populated by admin.js -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 2: CATEGORY MANAGEMENT -->
+    <section id="tabCategories" style="display: none;">
+      <div class="admin-panel-card">
+        <div class="admin-toolbar">
+          <div>
+            <h2 class="block-title" style="font-size: 24px;">Kategori Yönetimi</h2>
+            <p style="font-size: 12.5px; color: var(--parla-muted);">
+              Yeni kategoriler ekleyin, vitrinde öne çıkarın ve o kategorideki yeni ürünler için varsayılan özellikleri (beden, renk, kumaş vb.) belirleyin.
+            </p>
+          </div>
+          <button type="button" class="btn-gold" id="newCategoryBtn">+ Yeni Kategori Ekle</button>
+        </div>
+
+        <div class="admin-table-wrap">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Görsel</th>
+                <th>Kategori Adı</th>
+                <th>Slug (Kod)</th>
+                <th>Varsayılan Özellikler</th>
+                <th>Ana Sayfa Vitrini</th>
+                <th>Ürün Sayısı</th>
+                <th>İşlemler</th>
+              </tr>
+            </thead>
+            <tbody id="adminCategoriesTable">
+              <!-- Populated by admin.js -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 3: INSTAGRAM PHOTO EVALUATION REPORT -->
+    <section id="tabEvaluation" style="display: none;">
+      <div class="admin-panel-card">
+        <h2 class="block-title" style="font-size: 24px; margin-bottom: 8px;">@parlaboutiqesamsun Instagram Fotoğraf Değerlendirme Raporu</h2>
+        <p style="font-size: 13px; color: var(--parla-muted); margin-bottom: 20px;">
+          Instagram hesabındaki gönderiler ve çoklu (carousel) fotoğraflar incelenerek ışık, kadraj, arka plan temizliği ve kurumsal katalog uyumu açısından değerlendirilmiştir.
+        </p>
+        <div class="eval-grid" id="evalReportGrid">
+          <!-- Populated by admin.js -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- PRODUCT ADD / EDIT MODAL -->
+  <div class="modal-backdrop" id="editorModalBackdrop">
+    <div class="product-modal" style="max-width: 960px; padding: 28px;">
+      <button type="button" class="modal-close" id="closeEditorBtn">&times;</button>
+      <h2 class="block-title" id="editorModalTitle" style="font-size: 24px; margin-bottom: 20px;">Ürün Düzenle</h2>
+
+      <form id="productEditorForm">
+        <input type="hidden" id="editProductId" />
+
+        <div class="form-grid" style="margin-bottom: 24px;">
+          <div class="col-6">
+            <label class="field-label">Ürün Adı *</label>
+            <input type="text" id="editTitle" class="form-input" required placeholder="Örn: Kruvaze Yaka Gold Aksesuarlı Bluz" />
+          </div>
+
+          <div class="col-6">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
+              <label class="field-label" style="margin-bottom: 0;">Kategori *</label>
+              <button type="button" class="btn-text" id="quickAddCatBtn" style="font-size: 11.5px; padding: 0;">+ Yeni Kategori Ekle</button>
+            </div>
+            <select id="editCategory" class="form-select">
+              <!-- Populated dynamically by admin.js -->
+            </select>
+          </div>
+
+          <div class="col-6">
+            <label class="field-label">Ürün Kodu</label>
+            <input type="text" id="editCode" class="form-input" placeholder="PB-2026-009" />
+          </div>
+
+          <!-- DYNAMIC FEATURE TOGGLES CARD -->
+          <div class="col-12">
+            <div class="feature-toggle-card">
+              <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;">
+                <div>
+                  <strong style="font-size: 13px; color: var(--parla-black);">Üründe Gösterilecek Özellikler</strong>
+                  <div style="font-size: 11.5px; color: var(--parla-muted);">
+                    Örn. Aksesuar / Çanta için Beden veya Renk istemiyorsanız kapatabilirsiniz; ilgili alanlar otomatik gizlenir.
+                  </div>
+                </div>
+              </div>
+              <div class="toggle-chips-grid">
+                <label class="feature-toggle-btn active" id="btnToggleColors">
+                  <input type="checkbox" id="toggleHasColors" checked />
+                  <span>🎨 Renk Varyantı Olsun</span>
+                </label>
+                <label class="feature-toggle-btn active" id="btnToggleSizes">
+                  <input type="checkbox" id="toggleHasSizes" checked />
+                  <span>📏 Beden Seçeneği Olsun</span>
+                </label>
+                <label class="feature-toggle-btn active" id="btnToggleFabric">
+                  <input type="checkbox" id="toggleHasFabric" checked />
+                  <span>🧵 Kumaş &amp; Kalıp Bilgisi</span>
+                </label>
+                <label class="feature-toggle-btn active" id="btnToggleDesc">
+                  <input type="checkbox" id="toggleHasDesc" checked />
+                  <span>📝 Ürün Açıklaması</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-6">
+            <label class="field-label">Satış Fiyatı (TL) *</label>
+            <input type="number" id="editPrice" class="form-input" required min="0" step="1" placeholder="890" />
+          </div>
+
+          <div class="col-6">
+            <label class="field-label">İndirimsiz / Eski Fiyat (TL)</label>
+            <input type="number" id="editOldPrice" class="form-input" min="0" step="1" placeholder="Opsiyonel (Örn: 1090)" />
+          </div>
+
+          <div class="col-12">
+            <label class="field-label">Ana Trendyol Ürün Bağlantısı *</label>
+            <input type="url" id="editTrendyolUrl" class="form-input" required placeholder="https://www.trendyol.com/..." />
+          </div>
+
+          <div class="col-6" id="wrapFabric">
+            <label class="field-label">Kumaş &amp; Kalıp Bilgisi</label>
+            <input type="text" id="editFabric" class="form-input" placeholder="Örn: %95 Pamuk %5 Likra · Tam Kalıp" />
+          </div>
+
+          <div class="col-6" style="display: flex; align-items: flex-end; gap: 24px; padding-bottom: 8px;">
+            <label style="display: inline-flex; align-items: center; gap: 8px; font-size: 13px; cursor: pointer;">
+              <input type="checkbox" id="editIsNew" checked /> Yeni Sezon Etiketi
+            </label>
+            <label style="display: inline-flex; align-items: center; gap: 8px; font-size: 13px; cursor: pointer;">
+              <input type="checkbox" id="editFeatured" checked /> Vitrin / Öne Çıkan
+            </label>
+          </div>
+
+          <div class="col-12" id="wrapDescription">
+            <label class="field-label">Ürün Açıklaması</label>
+            <textarea id="editDescription" class="form-textarea" rows="3" placeholder="Ürün detayları..."></textarea>
+          </div>
+        </div>
+
+        <!-- MULTI-COLOR & MULTI-SIZE VARIANTS SECTION -->
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
+          <div>
+            <h3 style="font-size: 16px; font-weight: 600;" id="variantsSectionTitle">Renk, Beden &amp; Görsel Varyantları</h3>
+            <p style="font-size: 12px; color: var(--parla-muted);" id="variantsSectionSub">
+              Ürünün fotoğraflarını, beden stoklarını ve renklerini aşağıdan düzenleyin.
+            </p>
+          </div>
+          <button type="button" class="btn-text" id="addVariantBtn" style="font-weight: 600;">+ Yeni Renk Varyantı Ekle</button>
+        </div>
+
+        <div id="variantsContainer">
+          <!-- Populated dynamically by admin.js -->
+        </div>
+
+        <div style="display: flex; align-items: center; justify-content: flex-end; gap: 16px; margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--parla-border);">
+          <button type="button" class="btn-text" id="cancelEditorBtn">Vazgeç</button>
+          <button type="submit" class="btn-gold">Ürünü Kaydet</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- CATEGORY ADD / EDIT MODAL -->
+  <div class="modal-backdrop" id="categoryModalBackdrop">
+    <div class="product-modal" style="max-width: 580px; padding: 28px;">
+      <button type="button" class="modal-close" id="closeCategoryBtn">&times;</button>
+      <h2 class="block-title" id="categoryModalTitle" style="font-size: 22px; margin-bottom: 16px;">Yeni Kategori Ekle</h2>
+
+      <form id="categoryEditorForm">
+        <input type="hidden" id="editCategoryId" />
+
+        <div class="form-grid" style="margin-bottom: 20px;">
+          <div class="col-12">
+            <label class="field-label">Kategori Adı *</label>
+            <input type="text" id="editCategoryName" class="form-input" required placeholder="Örn: Çanta, Ayakkabı, Elbise, Takı" />
+          </div>
+
+          <div class="col-12">
+            <label class="field-label">Kapak Görseli URL veya Yolu</label>
+            <div style="display:flex; gap: 8px;">
+              <input type="text" id="editCategoryImage" class="form-input" placeholder="/images/brand/parla-logo.jpg veya /instagram_medya/..." />
+            </div>
+          </div>
+
+          <div class="col-12">
+            <label class="field-label">Bu Kategorideki Yeni Ürünler İçin Varsayılan Özellikler</label>
+            <div style="display: flex; flex-direction: column; gap: 8px; font-size: 13px; background: var(--parla-cream); padding: 12px 14px; border-radius: var(--radius-custom); border: 1px solid var(--parla-border);">
+              <label style="display: inline-flex; align-items: center; gap: 8px; cursor: pointer;">
+                <input type="checkbox" id="catDefColors" checked /> Renk Varyantı Olsun
+              </label>
+              <label style="display: inline-flex; align-items: center; gap: 8px; cursor: pointer;">
+                <input type="checkbox" id="catDefSizes" checked /> Beden Seçeneği Olsun (Aksesuar/Çanta için işareti kaldırabilirsiniz)
+              </label>
+              <label style="display: inline-flex; align-items: center; gap: 8px; cursor: pointer;">
+                <input type="checkbox" id="catDefFabric" checked /> Kumaş &amp; Kalıp Bilgisi Olsun
+              </label>
+              <label style="display: inline-flex; align-items: center; gap: 8px; cursor: pointer;">
+                <input type="checkbox" id="catDefDesc" checked /> Ürün Açıklaması Olsun
+              </label>
+            </div>
+          </div>
+
+          <div class="col-12">
+            <label style="display: inline-flex; align-items: center; gap: 8px; font-size: 13px; cursor: pointer;">
+              <input type="checkbox" id="catFeatured" checked /> Ana Sayfa "Popüler Kategoriler" Vitrininde Göster
+            </label>
+          </div>
+        </div>
+
+        <div style="display: flex; align-items: center; justify-content: flex-end; gap: 12px; padding-top: 14px; border-top: 1px solid var(--parla-border);">
+          <button type="button" class="btn-text" id="cancelCategoryBtn">Vazgeç</button>
+          <button type="submit" class="btn-gold">Kategoriyi Kaydet</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div class="toast" id="adminToast"></div>
+
+  <script src="/js/admin.js"></script>
+</body>
+</html>

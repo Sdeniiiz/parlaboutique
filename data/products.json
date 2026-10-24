@@ -1,0 +1,596 @@
+{
+  "settings": {
+    "brandName": "PARLA BUTIQUE",
+    "subtitle": "Samsun · Duruşehir",
+    "phone": "+90 532 061 37 84",
+    "whatsapp": "905320613784",
+    "instagram": "https://www.instagram.com/parlaboutiqesamsun/",
+    "instagramHandle": "@parlaboutiqesamsun",
+    "trendyolStoreUrl": "https://www.trendyol.com/magaza/parla-boutique-samsun",
+    "announcement": "SAMSUN DURUŞEHİR MAĞAZAMIZ VE TRENDYOL MAĞAZAMIZLA HİZMETİNİZDEYİZ  |  ONLINE SİPARİŞLER TRENDYOL GÜVENCESİYLE"
+  },
+  "categories": [
+    {
+      "id": "takim",
+      "name": "Takım",
+      "slug": "takim",
+      "image": "/images/products/siyah-dokulu-ceket-takim-1.jpg",
+      "featured": true,
+      "defaultHasColors": true,
+      "defaultHasSizes": true,
+      "defaultHasFabricInfo": true,
+      "defaultHasDescription": true
+    },
+    {
+      "id": "bluz",
+      "name": "Bluz",
+      "slug": "bluz",
+      "image": "/images/products/kruvaze-gold-bluz-siyah.jpg",
+      "featured": true,
+      "defaultHasColors": true,
+      "defaultHasSizes": true,
+      "defaultHasFabricInfo": true,
+      "defaultHasDescription": true
+    },
+    {
+      "id": "triko",
+      "name": "Triko & Sweatshirt",
+      "slug": "triko",
+      "image": "/images/products/cizgili-fermuarli-triko-kazak.jpg",
+      "featured": true,
+      "defaultHasColors": true,
+      "defaultHasSizes": true,
+      "defaultHasFabricInfo": true,
+      "defaultHasDescription": true
+    },
+    {
+      "id": "kaban",
+      "name": "Ceket & Kaban",
+      "slug": "kaban",
+      "image": "/images/products/kusakli-uzun-kase-kaban.jpg",
+      "featured": true,
+      "defaultHasColors": true,
+      "defaultHasSizes": true,
+      "defaultHasFabricInfo": true,
+      "defaultHasDescription": true
+    },
+    {
+      "id": "aksesuar",
+      "name": "Aksesuar",
+      "slug": "aksesuar",
+      "image": "/images/products/ikili-gold-zincir-kolye.jpg",
+      "featured": true,
+      "defaultHasColors": false,
+      "defaultHasSizes": false,
+      "defaultHasFabricInfo": false,
+      "defaultHasDescription": true
+    }
+  ],
+  "products": [
+    {
+      "id": "prd-1792863921661",
+      "code": "PB-2026-09",
+      "title": "Kombin Yıldızı Işıltılı Çanta",
+      "slug": "kombin-yildizi-isiltili-canta",
+      "category": "aksesuar",
+      "categoryName": "Aksesuar",
+      "price": 690,
+      "oldPrice": 990,
+      "isNew": true,
+      "featured": true,
+      "hasColors": false,
+      "hasSizes": false,
+      "hasFabricInfo": false,
+      "hasDescription": false,
+      "description": "",
+      "fabricInfo": "",
+      "instagramPostUrl": "https://www.instagram.com/parlaboutiqesamsun/",
+      "trendyolUrl": "https://www.trendyol.com/",
+      "variants": [
+        {
+          "id": "var-1792863860935",
+          "colorName": "",
+          "colorHex": "#141210",
+          "trendyolUrl": "https://www.trendyol.com/",
+          "images": [
+            "/images/uploads/fotograf-09-dc-5i71jw4w-1-1792863917298.jpg",
+            "/images/uploads/fotograf-10-dc-5i71jw4w-2-1792863917342.jpg",
+            "/images/uploads/fotograf-11-dc-5i71jw4w-3-1792863917381.jpg",
+            "/images/uploads/fotograf-12-dc-5i71jw4w-4-1792863917414.jpg"
+          ],
+          "sizes": []
+        }
+      ],
+      "createdAt": "2026-10-24T17:45:21.661Z",
+      "updatedAt": "2026-10-24T17:45:21.661Z"
+    },
+    {
+      "id": "prd-101",
+      "code": "PB-2026-001",
+      "title": "Kruvaze Yaka Gold Aksesuarlı Bluz",
+      "slug": "kruvaze-yaka-gold-aksesuarli-bluz",
+      "category": "bluz",
+      "categoryName": "Bluz",
+      "price": 890,
+      "oldPrice": 1090,
+      "isNew": true,
+      "featured": true,
+      "description": "Yaka açıklığını istediğiniz gibi ayarlayabileceğiniz, zarif ve şık bir model. Kruvaze yakasıyla hem daha kapalı hem de daha iddialı kullanıma uygundur. Belindeki gold toka aksesuarı ise kombine sofistike bir dokunuş katıyor.",
+      "fabricInfo": "%95 Pamuk %5 Likra Dokuma Kumaş · Tam Kalıp",
+      "instagramPostUrl": "https://www.instagram.com/p/DdTunhYNBvb/",
+      "trendyolUrl": "https://www.trendyol.com/sr?q=kruvaze+yaka+gold+tokali+bluz",
+      "variants": [
+        {
+          "id": "var-101-siyah",
+          "colorName": "Siyah",
+          "colorHex": "#141210",
+          "trendyolUrl": "https://www.trendyol.com/sr?q=siyah+kruvaze+yaka+gold+tokali+bluz",
+          "images": [
+            "/images/products/kruvaze-gold-bluz-siyah.jpg",
+            "/images/products/kruvaze-gold-bluz-ikili.jpg"
+          ],
+          "sizes": [
+            {
+              "size": "S",
+              "inStock": true
+            },
+            {
+              "size": "M",
+              "inStock": true
+            },
+            {
+              "size": "L",
+              "inStock": true
+            },
+            {
+              "size": "XL",
+              "inStock": false
+            }
+          ]
+        },
+        {
+          "id": "var-101-ekru",
+          "colorName": "Ekru",
+          "colorHex": "#F3EFE6",
+          "trendyolUrl": "https://www.trendyol.com/sr?q=ekru+kruvaze+yaka+gold+tokali+bluz",
+          "images": [
+            "/images/products/kruvaze-gold-bluz-ekru.jpg",
+            "/images/products/kruvaze-gold-bluz-ikili.jpg"
+          ],
+          "sizes": [
+            {
+              "size": "S",
+              "inStock": true
+            },
+            {
+              "size": "M",
+              "inStock": true
+            },
+            {
+              "size": "L",
+              "inStock": false
+            },
+            {
+              "size": "XL",
+              "inStock": true
+            }
+          ]
+        }
+      ],
+      "createdAt": "2026-09-15T12:00:00Z",
+      "hasColors": true,
+      "hasSizes": true,
+      "hasFabricInfo": true,
+      "hasDescription": true
+    },
+    {
+      "id": "prd-102",
+      "code": "PB-2026-002",
+      "title": "Dokulu Bomber Ceket & Piliseli Pantolon İkili Takım",
+      "slug": "dokulu-bomber-ceket-piliseli-pantolon-takim",
+      "category": "takim",
+      "categoryName": "Takım",
+      "price": 1890,
+      "oldPrice": 2250,
+      "isNew": true,
+      "featured": true,
+      "description": "Sade, şık ve her anına uyumlu özel tasarım ikili takım. Kendinden dokulu püskül nakışlı fermuarlı bomber ceket ve yüksek bel bağcıklı piliseli geniş paça pantolon ile hem gündüz hem akşam şıklığına zahmetsizce uyum sağlar.",
+      "fabricInfo": "Özel Dokulu Jakarlı & Piliseli Kumaş · Rahat Kesim",
+      "instagramPostUrl": "https://www.instagram.com/p/Dc6i8hoDRQ1/",
+      "trendyolUrl": "https://www.trendyol.com/sr?q=siyah+dokulu+bomber+ceket+piliseli+pantolon+takim",
+      "variants": [
+        {
+          "id": "var-102-siyah",
+          "colorName": "Siyah",
+          "colorHex": "#111111",
+          "trendyolUrl": "https://www.trendyol.com/sr?q=siyah+dokulu+bomber+ceket+piliseli+pantolon+takim",
+          "images": [
+            "/images/products/siyah-dokulu-ceket-takim-1.jpg",
+            "/images/products/siyah-dokulu-ceket-takim-2.jpg",
+            "/images/products/siyah-dokulu-ceket-takim-3.jpg"
+          ],
+          "sizes": [
+            {
+              "size": "S",
+              "inStock": true
+            },
+            {
+              "size": "M",
+              "inStock": true
+            },
+            {
+              "size": "L",
+              "inStock": true
+            },
+            {
+              "size": "XL",
+              "inStock": true
+            }
+          ]
+        }
+      ],
+      "createdAt": "2026-09-05T12:00:00Z",
+      "hasColors": true,
+      "hasSizes": true,
+      "hasFabricInfo": true,
+      "hasDescription": true
+    },
+    {
+      "id": "prd-103",
+      "code": "PB-2026-003",
+      "title": "Çizgili Yarım Fermuarlı Dik Yaka Triko Kazak",
+      "slug": "cizgili-yarim-fermuarli-dik-yaka-triko-kazak",
+      "category": "triko",
+      "categoryName": "Triko & Sweatshirt",
+      "price": 1150,
+      "oldPrice": null,
+      "isNew": true,
+      "featured": true,
+      "description": "Lacivert ve ekru kontrast çizgileri, geniş ribana manşetleri ve metal yarım fermuarlı dik yakasıyla zamansız marin şıklığı. Yumuşak dokusuyla soğuk havalarda konfor ve zarafeti bir arada sunar.",
+      "fabricInfo": "%100 Yumuşak Dokulu Triko · Rahat Kalıp",
+      "instagramPostUrl": "https://www.instagram.com/p/Dezj5whtE-N/",
+      "trendyolUrl": "https://www.trendyol.com/sr?q=lacivert+ekru+cizgili+yarim+fermuarli+triko+kazak",
+      "variants": [
+        {
+          "id": "var-103-lacivert-ekru",
+          "colorName": "Lacivert / Ekru",
+          "colorHex": "#1B263B",
+          "trendyolUrl": "https://www.trendyol.com/sr?q=lacivert+ekru+cizgili+yarim+fermuarli+triko+kazak",
+          "images": [
+            "/images/products/cizgili-fermuarli-triko-kazak.jpg"
+          ],
+          "sizes": [
+            {
+              "size": "Standart",
+              "inStock": true
+            },
+            {
+              "size": "S",
+              "inStock": true
+            },
+            {
+              "size": "M",
+              "inStock": true
+            },
+            {
+              "size": "L",
+              "inStock": true
+            }
+          ]
+        }
+      ],
+      "createdAt": "2026-10-22T12:00:00Z",
+      "hasColors": true,
+      "hasSizes": true,
+      "hasFabricInfo": true,
+      "hasDescription": true
+    },
+    {
+      "id": "prd-104",
+      "code": "PB-2026-004",
+      "title": "Çiçek & Yaprak Aplikeli Nakışlı Tasarım Sweatshirt",
+      "slug": "cicek-aplikeli-nakisli-tasarim-sweatshirt",
+      "category": "triko",
+      "categoryName": "Triko & Sweatshirt",
+      "price": 1190,
+      "oldPrice": 1390,
+      "isNew": true,
+      "featured": true,
+      "description": "Sonbahar şıklığını yansıtan özel 'Beauty Is Hidden Inside' nakışlı ve üç boyutlu acı kahve çiçek aplikeli ekru sweatshirt. İster kot pantolonlarla ister kahve tonlarında mini eteklerle kusursuz uyum sağlar.",
+      "fabricInfo": "3 İplik Şardonsuz Pamuklu Kumaş · Oversize Kesim",
+      "instagramPostUrl": "https://www.instagram.com/p/DewIFV9Ntn7/",
+      "trendyolUrl": "https://www.trendyol.com/sr?q=cicek+aplikeli+nakisli+ekru+sweatshirt",
+      "variants": [
+        {
+          "id": "var-104-ekru",
+          "colorName": "Ekru / Kahve Aplikeli",
+          "colorHex": "#EFE9DC",
+          "trendyolUrl": "https://www.trendyol.com/sr?q=cicek+aplikeli+nakisli+ekru+sweatshirt",
+          "images": [
+            "/images/products/aplikeli-ekru-sweatshirt-model.jpg",
+            "/images/products/aplikeli-ekru-sweatshirt-kombin.jpg"
+          ],
+          "sizes": [
+            {
+              "size": "S",
+              "inStock": true
+            },
+            {
+              "size": "M",
+              "inStock": true
+            },
+            {
+              "size": "L",
+              "inStock": true
+            }
+          ]
+        },
+        {
+          "id": "var-104-kahve",
+          "colorName": "Acı Kahve (Leopar Aplikeli)",
+          "colorHex": "#3E2723",
+          "trendyolUrl": "https://www.trendyol.com/sr?q=aci+kahve+leopar+cizme+baskili+new+york+sweatshirt",
+          "images": [
+            "/images/products/kahve-newyork-sweatshirt.jpg"
+          ],
+          "sizes": [
+            {
+              "size": "S",
+              "inStock": true
+            },
+            {
+              "size": "M",
+              "inStock": true
+            },
+            {
+              "size": "L",
+              "inStock": false
+            }
+          ]
+        }
+      ],
+      "createdAt": "2026-10-21T12:00:00Z",
+      "hasColors": true,
+      "hasSizes": true,
+      "hasFabricInfo": true,
+      "hasDescription": true
+    },
+    {
+      "id": "prd-105",
+      "code": "PB-2026-005",
+      "title": "Ajur Örgü Detaylı Yan Düğmeli Triko Kazak",
+      "slug": "ajur-orgu-detayli-yan-dugmeli-triko-kazak",
+      "category": "triko",
+      "categoryName": "Triko & Sweatshirt",
+      "price": 980,
+      "oldPrice": null,
+      "isNew": true,
+      "featured": true,
+      "description": "Zarif dikey ajur örgü desenleri ve sol etek ucundaki şık düğme detaylarıyla öne çıkan bisiklet yaka triko kazak. Hafif ve nefes alan dokusuyla mevsim geçişlerinin vazgeçilmez parçası.",
+      "fabricInfo": "Yumuşak Ajurlu Merserize Triko · Standart / S-M-L Uyumlu",
+      "instagramPostUrl": "https://www.instagram.com/p/DewHyvPt14v/",
+      "trendyolUrl": "https://www.trendyol.com/sr?q=lacivert+ajur+orgu+detayli+triko+kazak",
+      "variants": [
+        {
+          "id": "var-105-lacivert",
+          "colorName": "Lacivert",
+          "colorHex": "#1D2F53",
+          "trendyolUrl": "https://www.trendyol.com/sr?q=lacivert+ajur+orgu+detayli+triko+kazak",
+          "images": [
+            "/images/products/lacivert-ajurlu-triko-kazak.jpg"
+          ],
+          "sizes": [
+            {
+              "size": "Standart",
+              "inStock": true
+            },
+            {
+              "size": "S",
+              "inStock": true
+            },
+            {
+              "size": "M",
+              "inStock": true
+            },
+            {
+              "size": "L",
+              "inStock": true
+            }
+          ]
+        }
+      ],
+      "createdAt": "2026-10-20T12:00:00Z",
+      "hasColors": true,
+      "hasSizes": true,
+      "hasFabricInfo": true,
+      "hasDescription": true
+    },
+    {
+      "id": "prd-106",
+      "code": "PB-2026-006",
+      "title": "Apolet ve Kuşak Detaylı Uzun Kaşe Kaban",
+      "slug": "apolet-ve-kusak-detayli-uzun-kase-kaban",
+      "category": "kaban",
+      "categoryName": "Ceket & Kaban",
+      "price": 2490,
+      "oldPrice": 2890,
+      "isNew": false,
+      "featured": true,
+      "description": "Omuz apolet detayları, belden bağlamalı kuşağı ve maksi boy kesimiyle güçlü bir silüet sunan uzun kaban. Kaliteli tok duruşuyla hem klasik hem günlük kombinlerinizin tamamlayıcısı.",
+      "fabricInfo": "Birinci Sınıf Tok Dokuma Kaşe Kumaş · Astarlı",
+      "instagramPostUrl": "https://www.instagram.com/p/CzTbJjGMfBM/",
+      "trendyolUrl": "https://www.trendyol.com/sr?q=kusakli+apoletli+uzun+kase+kaban",
+      "variants": [
+        {
+          "id": "var-106-kahve",
+          "colorName": "Acı Kahve / Antrasit",
+          "colorHex": "#2C2624",
+          "trendyolUrl": "https://www.trendyol.com/sr?q=kusakli+apoletli+uzun+kase+kaban",
+          "images": [
+            "/images/products/kusakli-uzun-kase-kaban.jpg"
+          ],
+          "sizes": [
+            {
+              "size": "36",
+              "inStock": true
+            },
+            {
+              "size": "38",
+              "inStock": true
+            },
+            {
+              "size": "40",
+              "inStock": true
+            },
+            {
+              "size": "42",
+              "inStock": false
+            }
+          ]
+        }
+      ],
+      "createdAt": "2026-08-15T12:00:00Z",
+      "hasColors": true,
+      "hasSizes": true,
+      "hasFabricInfo": true,
+      "hasDescription": true
+    },
+    {
+      "id": "prd-107",
+      "code": "PB-2026-007",
+      "title": "Gold Düğme Detaylı A-Kesim Kanvas Mini Etek",
+      "slug": "gold-dugme-detayli-a-kesim-mini-etek",
+      "category": "takim",
+      "categoryName": "Takım",
+      "price": 850,
+      "oldPrice": null,
+      "isNew": true,
+      "featured": false,
+      "description": "Gold düğme ve perçin detaylarıyla zenginleştirilmiş, tok duruşlu A-kesim acı kahve mini etek. Triko ve sweatshirt modelleriyle sonbahar-kış kombinleri için ideal.",
+      "fabricInfo": "%100 Pamuklu Tok Kanvas / Gabardin · Tam Kalıp",
+      "instagramPostUrl": "https://www.instagram.com/p/DewIFV9Ntn7/",
+      "trendyolUrl": "https://www.trendyol.com/sr?q=aci+kahve+gold+dugmeli+mini+etek",
+      "variants": [
+        {
+          "id": "var-107-kahve",
+          "colorName": "Acı Kahve",
+          "colorHex": "#3A2820",
+          "trendyolUrl": "https://www.trendyol.com/sr?q=aci+kahve+gold+dugmeli+mini+etek",
+          "images": [
+            "/images/products/aplikeli-ekru-sweatshirt-kombin.jpg"
+          ],
+          "sizes": [
+            {
+              "size": "S",
+              "inStock": true
+            },
+            {
+              "size": "M",
+              "inStock": true
+            },
+            {
+              "size": "L",
+              "inStock": true
+            }
+          ]
+        }
+      ],
+      "createdAt": "2026-10-21T10:00:00Z",
+      "hasColors": true,
+      "hasSizes": true,
+      "hasFabricInfo": true,
+      "hasDescription": true
+    },
+    {
+      "id": "prd-108",
+      "code": "PB-2026-008",
+      "title": "İkili Gold İtalyan Yılan & Burgu Zincir Kolye Seti",
+      "slug": "ikili-gold-italyan-yilan-burgu-zincir-kolye-seti",
+      "category": "aksesuar",
+      "categoryName": "Aksesuar",
+      "price": 450,
+      "oldPrice": 590,
+      "isNew": true,
+      "featured": true,
+      "hasColors": false,
+      "hasSizes": false,
+      "hasFabricInfo": true,
+      "hasDescription": true,
+      "description": "Zarafetin en sade hali. Günlük kombinlerinize ve özel gün şıklığınıza eşlik edecek zamansız bir dokunuş. Yassı İtalyan zincir ve burgu zincirden oluşan ikili tasarım.",
+      "fabricInfo": "Kararmaya Dayanıklı Gold Kaplama Çelik · Ayarlanabilir Uzunluk",
+      "instagramPostUrl": "https://www.instagram.com/p/Ddo-hETNVyV/",
+      "trendyolUrl": "https://www.trendyol.com/sr?q=ikili+gold+italyan+zincir+celik+kolye",
+      "variants": [
+        {
+          "id": "var-108-gold",
+          "colorName": "",
+          "colorHex": "#C8A45D",
+          "trendyolUrl": "https://www.trendyol.com/sr?q=ikili+gold+italyan+zincir+celik+kolye",
+          "images": [
+            "/images/products/ikili-gold-zincir-kolye.jpg"
+          ],
+          "sizes": []
+        }
+      ],
+      "createdAt": "2026-09-23T12:00:00Z"
+    }
+  ],
+  "photoEvaluation": [
+    {
+      "postCode": "DdTunhYNBvb",
+      "title": "Kruvaze Yaka Gold Tokalı Bluz (Siyah & Ekru)",
+      "status": "selected",
+      "rating": "9.5/10",
+      "notes": "Işık, netlik ve manken duruşu çok başarılı. Tek karede iki renk (Siyah ve Ekru) sunulduğu için görsel hem ikili vitrin olarak korundu hem de Siyah ve Ekru renk varyantları için ayrı ayrı dikey portre olarak ayrıştırıldı; böylece sitede renk seçildiğinde ilgili rengin fotoğrafı dinamik olarak değişiyor."
+    },
+    {
+      "postCode": "Dc6i8hoDRQ1 (1, 4 ve 5. Kareler)",
+      "title": "Dokulu Siyah Bomber Ceket & Piliseli Pantolon Takım (Seçilen Kareler)",
+      "status": "selected",
+      "rating": "9.0/10",
+      "notes": "6 fotoğraflık mağaza içi gold ayna çekiminden en temiz 3 kare (1. yakın plan boy çekimi, 4. cadde/kaldırım görünmeyen tam boy ayna çekimi ve 5. kumaş dokusunu net gösteren arka detay çekimi) seçilerek ürün galerisinde kullanıldı."
+    },
+    {
+      "postCode": "Dc6i8hoDRQ1 (2, 3 ve 6. Kareler)",
+      "title": "Dokulu Siyah Takım (Elenen Kareler)",
+      "status": "excluded",
+      "rating": "5.5/10",
+      "notes": "2. ve 3. karelerde mağaza vitrin camından dışarıdaki cadde, araçlar ve çimler kadraja girdiği için; 6. karede ise arka planda başka bir müşteri göründüğü için kurumsal vitrin bütünlüğünü bozmamak adına elendi."
+    },
+    {
+      "postCode": "Dezj5whtE-N",
+      "title": "Lacivert-Ekru Çizgili Yarım Fermuarlı Triko Kazak",
+      "status": "selected",
+      "rating": "9.8/10",
+      "notes": "Stüdyo arka planı, ışık dengesi ve ürünün duruşu Robin.com.tr tarzı minimal katalog estetiğine birebir uyumlu. Ana vitrin ve kategori kapak görseli olarak kullanıldı."
+    },
+    {
+      "postCode": "DewIFV9Ntn7",
+      "title": "Sonbahar Kombin Askı Çekimi (Sweatshirt & Mini Etek)",
+      "status": "selected_edited",
+      "rating": "8.8/10",
+      "notes": "Fotoğrafın kompozisyonu ve sıcak renk tonları çok estetik ancak alt kısımda Instagram Story/Post için eklenmiş siyah kutu içinde 'Sonbahar şıklığı 🍂🍁' yazısı bulunuyordu. Bu yazı alanı kırpılarak temiz, dergi kalitesinde bir ürün fotoğrafı elde edildi."
+    },
+    {
+      "postCode": "DewHyvPt14v",
+      "title": "3'lü Sonbahar Triko & Sweatshirt Kolajı",
+      "status": "selected_edited",
+      "rating": "9.0/10",
+      "notes": "Reels/Story formatındaki siyah alt-üst bantlar (letterbox) temizlendi; hem yatay koleksiyon banner'ı olarak hem de 3 ayrı model (Lacivert Ajurlu Triko, Ekru Aplikeli Sweatshirt, Acı Kahve New York Sweatshirt) için tekil portre ürün fotoğrafları olarak ayrıştırıldı."
+    },
+    {
+      "postCode": "Ddo-hETNVyV",
+      "title": "İkili Gold Yılan & Burgu Zincir Kolye",
+      "status": "selected",
+      "rating": "9.5/10",
+      "notes": "Yakın plan netliği, altın tonlarının Parla Boutique kurumsal renkleriyle uyumu ve minimal kadrajı kusursuz. Aksesuar kategorisinde doğrudan kullanıldı."
+    },
+    {
+      "postCode": "CzTbJjGMfBM",
+      "title": "Kuşaklı Uzun Kaşe Kaban",
+      "status": "selected",
+      "rating": "8.2/10",
+      "notes": "Kabanın kalıbını, omuz apoletlerini ve kuşak detayını arkadan güçlü bir silüetle gösteriyor. Dış giyim / Kaban kategorisi için kullanıldı."
+    }
+  ]
+}
