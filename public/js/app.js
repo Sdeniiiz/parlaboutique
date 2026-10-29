@@ -377,7 +377,7 @@
       if (hasSizes && selectedSize) detailsList.push(`Beden: ${selectedSize}`);
       const detailsStr = detailsList.length > 0 ? ` (${detailsList.join(', ')})` : '';
       const whatsappText = encodeURIComponent(
-        `Merhaba parlaboutiqesamsun, "${product.title}"${detailsStr} ürünü hakkında bilgi almak istiyorum.`
+        `Merhaba PARLA BOUTİQUE, "${product.title}"${detailsStr} ürünü hakkında bilgi almak istiyorum.`
       );
 
       modalBody.innerHTML = `

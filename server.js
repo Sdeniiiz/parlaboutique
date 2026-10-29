@@ -431,6 +431,6 @@ app.get(['/admin', '/yonetim'], (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`parlaboutiqesamsun - Tarzınla Parla sunucusu çalışıyor: http://localhost:${PORT}`);
+  console.log(`PARLA BOUTİQUE - Tarzınla Parla sunucusu çalışıyor: http://localhost:${PORT}`);
   console.log(`Yönetim Paneli: http://localhost:${PORT}/admin`);
 });
