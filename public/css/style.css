@@ -792,26 +792,31 @@ img {
 .products-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 24px 16px;
+  gap: 36px 20px;
 }
 
 @media (min-width: 768px) {
   .products-grid {
     grid-template-columns: repeat(3, 1fr);
-    gap: 32px 20px;
+    gap: 46px 28px;
   }
 }
 
 @media (min-width: 1024px) {
   .products-grid {
     grid-template-columns: repeat(4, 1fr);
-    gap: 36px 24px;
+    gap: 52px 32px;
   }
 }
 
 .product-card {
   display: flex;
   flex-direction: column;
+  transition: transform var(--transition-fast);
+}
+
+.product-card:hover {
+  transform: translateY(-2px);
 }
 
 .product-media {
@@ -821,6 +826,12 @@ img {
   border-radius: var(--radius-custom);
   overflow: hidden;
   cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  transition: box-shadow 0.3s ease;
+}
+
+.product-media:hover {
+  box-shadow: 0 8px 24px rgba(184, 148, 77, 0.12);
 }
 
 .product-media img {
@@ -848,52 +859,55 @@ img {
   border-radius: 2px;
 }
 
-/* Product info below image: clean typography, no borders or boxes */
+/* Product info below image: spacious, luxury spacing for color, sizes and text */
 .product-info {
-  padding-top: 12px;
+  padding-top: 16px;
+  padding-bottom: 6px;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 10px;
 }
 
 .product-meta-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 8px;
-  min-height: 18px;
+  gap: 12px;
+  min-height: 24px;
+  margin-bottom: 2px;
 }
 
 /* Interactive Color Dots */
 .color-dots {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
 }
 
 .color-dot {
-  width: 14px;
-  height: 14px;
+  width: 16px;
+  height: 16px;
   border-radius: 50%;
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.22);
   cursor: pointer;
   padding: 0;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .color-dot:hover {
-  transform: scale(1.15);
+  transform: scale(1.2);
 }
 
 .color-dot.active {
   box-shadow: 0 0 0 2px var(--parla-white), 0 0 0 3.5px var(--parla-gold-dark);
 }
 
-/* Plain text sizes on card — NOT boxed buttons! */
+/* Plain text sizes on card */
 .product-sizes-text {
-  font-size: 11px;
+  font-size: 11.5px;
   color: var(--parla-muted);
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em;
+  font-weight: 400;
 }
 
 .product-sizes-text span.out {
@@ -902,11 +916,12 @@ img {
 }
 
 .product-title {
-  font-size: 13.5px;
-  font-weight: 400;
+  font-size: 14px;
+  font-weight: 450;
   color: var(--parla-text);
-  line-height: 1.4;
+  line-height: 1.45;
   cursor: pointer;
+  margin-top: 2px;
   transition: color var(--transition-fast);
 }
 
@@ -916,10 +931,12 @@ img {
 
 .product-bottom-row {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
-  gap: 8px;
-  margin-top: 2px;
+  gap: 12px;
+  margin-top: 6px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(220, 215, 205, 0.55);
 }
 
 .product-price-wrap {
@@ -929,7 +946,7 @@ img {
 }
 
 .product-price {
-  font-size: 14px;
+  font-size: 14.5px;
   font-weight: 600;
   color: var(--parla-black);
 }
@@ -940,18 +957,57 @@ img {
   text-decoration: line-through;
 }
 
-/* Subtle underlined link for Trendyol on card — NOT a box! */
+/* Luxury shimmering & sparkling Trendyol link */
 .product-trendyol-link {
-  font-size: 11.5px;
-  font-weight: 500;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 600;
   color: var(--parla-gold-dark);
-  text-decoration: underline;
-  text-underline-offset: 4px;
+  text-decoration: none;
+  background: linear-gradient(110deg, var(--parla-gold-dark) 0%, #ffde6b 25%, #f27a1a 50%, #fff0b3 75%, var(--parla-gold-dark) 100%);
+  background-size: 220% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: trendyol-shimmer-sweep 3.2s linear infinite;
   white-space: nowrap;
+  padding: 2px 4px;
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.product-trendyol-link .sparkle-icon {
+  font-size: 10px;
+  color: var(--parla-gold);
+  -webkit-text-fill-color: var(--parla-gold);
+  display: inline-block;
+  animation: sparkle-pulse 1.8s ease-in-out infinite;
+}
+
+.product-trendyol-link::after {
+  content: '';
+  position: absolute;
+  left: 4px;
+  right: 4px;
+  bottom: 0px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--parla-gold), var(--trendyol-orange), transparent);
+  transition: transform 0.3s ease;
 }
 
 .product-trendyol-link:hover {
-  color: var(--trendyol-orange);
+  transform: translateY(-1px);
+  filter: drop-shadow(0 2px 6px rgba(242, 122, 26, 0.4));
+}
+
+@keyframes trendyol-shimmer-sweep {
+  0% {
+    background-position: 220% center;
+  }
+  100% {
+    background-position: -220% center;
+  }
 }
 
 /* ==========================================
@@ -1333,12 +1389,14 @@ img {
 
 /* Single Primary Conversion CTA to Trendyol */
 .trendyol-primary-cta {
+  position: relative;
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
   width: 100%;
-  padding: 15px 24px;
+  padding: 16px 24px;
   background-color: var(--parla-black);
   color: var(--parla-gold-light);
   border: 1px solid var(--parla-gold);
@@ -1348,12 +1406,38 @@ img {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   transition: all var(--transition-fast);
-  margin-top: 6px;
+  margin-top: 10px;
+  box-shadow: 0 4px 18px rgba(184, 148, 77, 0.2);
+}
+
+.trendyol-primary-cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -130%;
+  width: 70%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.28), rgba(242, 222, 107, 0.45), transparent);
+  transform: skewX(-25deg);
+  animation: trendyol-btn-sweep 3.2s infinite;
+}
+
+@keyframes trendyol-btn-sweep {
+  0% { left: -130%; }
+  35%, 100% { left: 160%; }
+}
+
+.trendyol-primary-cta .sparkle-icon {
+  font-size: 13px;
+  color: var(--parla-gold);
+  animation: sparkle-pulse 1.8s ease-in-out infinite;
 }
 
 .trendyol-primary-cta:hover {
   background-color: var(--parla-gold);
   color: var(--parla-black);
+  box-shadow: 0 6px 24px rgba(184, 148, 77, 0.45);
+  transform: translateY(-1px);
 }
 
 .modal-secondary-links {

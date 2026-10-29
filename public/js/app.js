@@ -192,8 +192,8 @@
               <span class="product-price">${formatPrice(product.price)}</span>
               ${product.oldPrice ? `<span class="product-old-price">${formatPrice(product.oldPrice)}</span>` : ''}
             </div>
-            <a href="${targetTrendyolUrl}" target="_blank" rel="noopener noreferrer" class="product-trendyol-link">
-              Trendyol'da Gör ↗
+            <a href="${targetTrendyolUrl}" target="_blank" rel="noopener noreferrer" class="product-trendyol-link" title="Trendyol'da İncele">
+              <span class="sparkle-icon">✦</span> Trendyol'da Gör ↗
             </a>
           </div>
         </div>
@@ -449,6 +449,7 @@
 
           <!-- Single Intentional Conversion Action: Trendyol Redirect -->
           <a href="${trendyolTarget}" target="_blank" rel="noopener noreferrer" class="trendyol-primary-cta">
+            <span class="sparkle-icon">✨</span>
             <span>Trendyol'da İncele ve Sipariş Ver</span>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M7 17L17 7M7 7h10v10"/>
