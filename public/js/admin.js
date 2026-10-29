@@ -463,7 +463,7 @@
       document.getElementById('editCode').value = `PB-2026-0${(catalog.products || []).length + 1}`;
       document.getElementById('editPrice').value = '';
       document.getElementById('editOldPrice').value = '';
-      document.getElementById('editTrendyolUrl').value = 'https://www.trendyol.com/';
+      document.getElementById('editTrendyolUrl').value = 'https://www.trendyol.com/magaza/parlaboutuqueee-m-1358216?sst=0&sk=1';
       document.getElementById('editFabric').value = '';
       document.getElementById('editIsNew').checked = true;
       document.getElementById('editFeatured').checked = true;

@@ -1,7 +1,7 @@
 {
-  "name": "parla-boutique-samsun",
+  "name": "parlaboutiqesamsun",
   "version": "1.0.0",
-  "description": "Parla Boutique Samsun - Online Katalog & Trendyol Yönlendirme Sistemi",
+  "description": "parlaboutiqesamsun - Tarzınla Parla Online Katalog & Trendyol Entegrasyonu",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"

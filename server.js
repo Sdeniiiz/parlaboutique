@@ -129,7 +129,7 @@ function normalizeProduct(payload, existing = null, allCategories = []) {
     description: hasDescription ? (payload.description || '').trim() : '',
     fabricInfo: hasFabricInfo ? (payload.fabricInfo || '').trim() : '',
     instagramPostUrl: (payload.instagramPostUrl || (existing && existing.instagramPostUrl) || 'https://www.instagram.com/parlaboutiqesamsun/').trim(),
-    trendyolUrl: (payload.trendyolUrl || (effectiveVariants[0] && effectiveVariants[0].trendyolUrl) || 'https://www.trendyol.com').trim(),
+    trendyolUrl: (payload.trendyolUrl || (effectiveVariants[0] && effectiveVariants[0].trendyolUrl) || 'https://www.trendyol.com/magaza/parlaboutuqueee-m-1358216?sst=0&sk=1').trim(),
     variants: effectiveVariants,
     createdAt: existing ? existing.createdAt : new Date().toISOString(),
     updatedAt: new Date().toISOString()
@@ -431,6 +431,6 @@ app.get(['/admin', '/yonetim'], (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Parla Boutique Samsun sunucusu çalışıyor: http://localhost:${PORT}`);
+  console.log(`parlaboutiqesamsun - Tarzınla Parla sunucusu çalışıyor: http://localhost:${PORT}`);
   console.log(`Yönetim Paneli: http://localhost:${PORT}/admin`);
 });
