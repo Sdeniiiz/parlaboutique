@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /yonetim
+Disallow: /api/
+
+Sitemap: https://parlaboutique.onrender.com/sitemap.xml

@@ -119,7 +119,7 @@
     grid.innerHTML = featuredCats.map(cat => `
       <div class="category-card" data-cat-card="${cat.id || cat.slug}">
         <div class="category-img-wrap sheen-wrap">
-          <img src="${cat.image || '/images/brand/parla-logo.jpg'}" alt="${cat.name}" loading="lazy" />
+          <img src="${cat.image || '/images/brand/parla-logo.jpg'}" alt="${cat.name}" loading="lazy" decoding="async" />
         </div>
         <div class="category-label">${cat.name}</div>
       </div>
@@ -176,7 +176,7 @@
     return `
       <article class="product-card" data-card-key="${stateKey}" data-product-id="${product.id}">
         <div class="product-media sheen-wrap" data-open-product="${product.id}" data-primary-img="${primaryImg}" data-hover-img="${hoverImg}">
-          <img src="${primaryImg}" alt="${product.title}${hasColors && activeVariant.colorName ? ' - ' + activeVariant.colorName : ''}" loading="lazy" />
+          <img src="${primaryImg}" alt="${product.title}${hasColors && activeVariant.colorName ? ' - ' + activeVariant.colorName : ''}" loading="lazy" decoding="async" />
           ${product.isNew ? '<span class="product-subtle-tag">Yeni</span>' : ''}
         </div>
 
@@ -218,14 +218,21 @@
       }
     });
 
-    // Open modal on image or title click
+    // Open modal on image or title click or keyboard Enter/Space
     container.querySelectorAll('[data-open-product]').forEach(el => {
-      el.addEventListener('click', () => {
+      const handleOpen = () => {
         const pid = el.getAttribute('data-open-product');
         const card = el.closest('.product-card');
         const stateKey = card ? card.getAttribute('data-card-key') : null;
         const initialVarIdx = stateKey && cardVariantState[stateKey] ? cardVariantState[stateKey] : 0;
         openProductModal(pid, initialVarIdx);
+      };
+      el.addEventListener('click', handleOpen);
+      el.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          handleOpen();
+        }
       });
     });
 

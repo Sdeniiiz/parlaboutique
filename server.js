@@ -1,4 +1,5 @@
 const express = require('express');
+const compression = require('compression');
 const fs = require('fs');
 const path = require('path');
 
@@ -15,10 +16,40 @@ fs.mkdirSync(UPLOAD_DIR, { recursive: true });
 fs.mkdirSync(PRODUCTS_IMG_DIR, { recursive: true });
 fs.mkdirSync(INSTAGRAM_MEDIA_DIR, { recursive: true });
 
+// Performance: Gzip / Deflate compression
+app.use(compression());
+
+// Security: HTTP Security Headers
+app.use((req, res, next) => {
+  res.setHeader('X-Content-Type-Options', 'nosniff');
+  res.setHeader('X-Frame-Options', 'SAMEORIGIN');
+  res.setHeader('X-XSS-Protection', '1; mode=block');
+  res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
+  res.setHeader('Permissions-Policy', 'geolocation=(), microphone=(), camera=()');
+  next();
+});
+
 app.use(express.json({ limit: '25mb' }));
 app.use(express.urlencoded({ extended: true, limit: '25mb' }));
-app.use(express.static(path.join(__dirname, 'public')));
-app.use('/instagram_medya', express.static(INSTAGRAM_MEDIA_DIR));
+
+// Static Assets with Cache-Control Optimization
+app.use(express.static(path.join(__dirname, 'public'), {
+  maxAge: '1d',
+  setHeaders: (res, filePath) => {
+    if (filePath.endsWith('.html')) {
+      res.setHeader('Cache-Control', 'no-cache, must-revalidate');
+    } else if (/\.(jpg|jpeg|png|webp|svg|css|js|woff2?)$/i.test(filePath)) {
+      res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
+    }
+  }
+}));
+
+app.use('/instagram_medya', express.static(INSTAGRAM_MEDIA_DIR, {
+  maxAge: '7d',
+  setHeaders: (res) => {
+    res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
+  }
+}));
 
 // Helper to read and write database safely
 function readData() {
@@ -425,9 +456,57 @@ app.put('/api/settings', (req, res) => {
   }
 });
 
+// Dynamic SEO Sitemap XML
+app.get('/sitemap.xml', (req, res) => {
+  try {
+    const data = readData();
+    const today = new Date().toISOString().split('T')[0];
+    const baseUrl = 'https://parlaboutique.onrender.com';
+
+    let xml = `<?xml version="1.0" encoding="UTF-8"?>\n`;
+    xml += `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n`;
+    xml += `        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n`;
+
+    // Home
+    xml += `  <url>\n`;
+    xml += `    <loc>${baseUrl}/</loc>\n`;
+    xml += `    <lastmod>${today}</lastmod>\n`;
+    xml += `    <changefreq>daily</changefreq>\n`;
+    xml += `    <priority>1.0</priority>\n`;
+    xml += `    <image:image>\n`;
+    xml += `      <image:loc>${baseUrl}/images/brand/parla-logo.jpg</image:loc>\n`;
+    xml += `      <image:title>PARLA BOUTİQUE Samsun</image:title>\n`;
+    xml += `      <image:caption>PARLA BOUTİQUE Tarzınla Parla Kadın Giyim Koleksiyonu</image:caption>\n`;
+    xml += `    </image:image>\n`;
+    xml += `  </url>\n`;
+
+    // Categories
+    (data.categories || []).forEach(c => {
+      xml += `  <url>\n`;
+      xml += `    <loc>${baseUrl}/#${c.id || c.slug}</loc>\n`;
+      xml += `    <lastmod>${today}</lastmod>\n`;
+      xml += `    <changefreq>daily</changefreq>\n`;
+      xml += `    <priority>0.8</priority>\n`;
+      xml += `  </url>\n`;
+    });
+
+    xml += `</urlset>\n`;
+
+    res.header('Content-Type', 'application/xml');
+    res.send(xml);
+  } catch (err) {
+    res.status(500).sendFile(path.join(__dirname, 'public', 'sitemap.xml'));
+  }
+});
+
 // Admin route alias
 app.get(['/admin', '/yonetim'], (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'admin.html'));
+});
+
+// 404 Handler for undefined routes
+app.use((req, res) => {
+  res.status(404).sendFile(path.join(__dirname, 'public', '404.html'));
 });
 
 app.listen(PORT, () => {
