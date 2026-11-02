@@ -32,8 +32,11 @@
   function applySettings() {
     const s = catalog.settings || {};
     if (s.announcement) {
-      const el = document.getElementById('announcementText');
-      if (el) el.textContent = s.announcement;
+      document.querySelectorAll('.announcement-text').forEach(el => {
+        el.textContent = s.announcement;
+      });
+      const elOld = document.getElementById('announcementText');
+      if (elOld) elOld.textContent = s.announcement;
     }
     if (s.trendyolStoreUrl) {
       const fLink = document.getElementById('footerTrendyolLink');
@@ -322,7 +325,9 @@
     renderCollectionProducts();
 
     const drawer = document.getElementById('mobileDrawer');
+    const overlay = document.getElementById('mobileDrawerOverlay');
     if (drawer) drawer.classList.remove('open');
+    if (overlay) overlay.classList.remove('open');
 
     if (scroll) {
       const sec = document.getElementById('koleksiyon');
@@ -538,13 +543,30 @@
       });
     }
 
-    // Mobile drawer toggle
+    // Mobile drawer toggle & overlay
     const mobileBtn = document.getElementById('mobileMenuBtn');
     const mobileDrawer = document.getElementById('mobileDrawer');
-    if (mobileBtn && mobileDrawer) {
-      mobileBtn.addEventListener('click', () => {
-        mobileDrawer.classList.toggle('open');
+    const mobileOverlay = document.getElementById('mobileDrawerOverlay');
+    const mobileClose = document.getElementById('mobileDrawerClose');
+
+    function setMobileDrawer(open) {
+      if (!mobileDrawer) return;
+      const isOpen = typeof open === 'boolean' ? open : !mobileDrawer.classList.contains('open');
+      mobileDrawer.classList.toggle('open', isOpen);
+      if (mobileOverlay) mobileOverlay.classList.toggle('open', isOpen);
+    }
+
+    if (mobileBtn) {
+      mobileBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        setMobileDrawer();
       });
+    }
+    if (mobileClose) {
+      mobileClose.addEventListener('click', () => setMobileDrawer(false));
+    }
+    if (mobileOverlay) {
+      mobileOverlay.addEventListener('click', () => setMobileDrawer(false));
     }
 
     // Modal close events
